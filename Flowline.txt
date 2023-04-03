@@ -1,0 +1,19 @@
+SENDER
+
+Get file/document to encrypt/send
+Create randomn AES symmetric key
+Get recipients public RSA key
+Encrypt AES key with public key (RSA asymmetric)
+Use AES key to encrypt file/document(AES symmetric)
+Write both encryption AES key and ecrypted file to one bundled file
+Send bundled file to recipient, which is very secure
+
+
+RECIPIENT
+
+Read first 16 bytes of bundled file (get RSA encrypted AES key)
+Read next 16 bytes and get IV
+Decrypt  AES key with private RSA key
+Use AES key to decrypt rest of bundled file
+Open file.
+
